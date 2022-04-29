@@ -33,9 +33,9 @@ Description 				Allocates (with malloc(3)) and returns an array of strings obtai
 
 static int	ft_word_count(char const *s, char c)
 {
-	int	in_word;
-	int	word_count;
-	int	i;
+	int				in_word;
+	int				word_count;
+	unsigned int	i;
 
 	i = 0;
 	word_count = 0;
@@ -60,9 +60,9 @@ static int	ft_word_count(char const *s, char c)
 
 char	**ft_gen(const char *s, char c, char **res, int res_s_i)
 {
-	int	i;
-	int	in_word;
-	int	word_start;
+	unsigned int	i;
+	int				in_word;
+	int				word_start;
 
 	i = 0;
 	while (i < ft_strlen(s))

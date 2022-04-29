@@ -6,7 +6,7 @@
 #    By: bogunlan <bogunlan@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/25 16:42:02 by ssergiu           #+#    #+#              #
-#    Updated: 2022/04/29 12:03:37 by bogunlan         ###   ########.fr        #
+#    Updated: 2022/04/29 19:06:05 by bogunlan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,26 +50,40 @@ FILES = ft_strlen \
 		ft_putnbr_fd \
 		ft_strmapi \
 		ft_striteri \
-		ft_split
+		ft_split 
 
+BONUSFILES = ft_lstnew \
+			ft_lstadd_front \
+			ft_lstsize \
+			ft_lstlast \
+			ft_lstadd_back \
+			ft_lstdelone \
+			ft_lstclear \
+			ft_lstiter \
+			ft_lstmap
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
+BONUSSRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(BONUSFILES)))
 
 OBJS_DIR = ./
 OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
+BONUSOBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(BONUSFILES)))
 
 
-.c.o: $(SRCS)
+.c.o:
 	$(CC) $(CFLAGS) -c -o $@ $<
-
+	
 $(NAME): $(OBJS)
 	$(AR) $@ $^
 
 all: $(NAME)
 
+bonus: $(BONUSOBJS) $(NAME)
+	$(AR) $(NAME) $(BONUSOBJS)
+
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(BONUSOBJS)
 
 fclean: clean
 	$(RM) $(NAME)
