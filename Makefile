@@ -6,7 +6,7 @@
 #    By: bogunlan <bogunlan@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/25 16:42:02 by ssergiu           #+#    #+#              #
-#    Updated: 2022/04/29 19:06:05 by bogunlan         ###   ########.fr        #
+#    Updated: 2022/04/30 21:13:12 by bogunlan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
 
-FILES = ft_strlen \
+MANDATORY_FILES = ft_strlen \
 		ft_atoi \
 		ft_memset \
 		ft_bzero \
@@ -52,7 +52,7 @@ FILES = ft_strlen \
 		ft_striteri \
 		ft_split 
 
-BONUSFILES = ft_lstnew \
+BONUS_FILES = ft_lstnew \
 			ft_lstadd_front \
 			ft_lstsize \
 			ft_lstlast \
@@ -63,17 +63,17 @@ BONUSFILES = ft_lstnew \
 			ft_lstmap
 
 SRCS_DIR = ./
-SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
+SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(MANDATORY_FILES)))
 BONUSSRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(BONUSFILES)))
 
 OBJS_DIR = ./
-OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
-BONUSOBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(BONUSFILES)))
+OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(MANDATORY_FILES)))
+BONUSOBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(BONUS_FILES)))
 
 
-.c.o:
+.c.o: $(SRCS)
 	$(CC) $(CFLAGS) -c -o $@ $<
-	
+
 $(NAME): $(OBJS)
 	$(AR) $@ $^
 
