@@ -31,7 +31,7 @@ static unsigned int	ft_b(char const *s1, char const *set)
 {
 	unsigned int	temp_begin;
 	unsigned int	index;
-	unsigned char	i;
+	int				i;
 
 	i = 0;
 	temp_begin = 0;
@@ -50,7 +50,7 @@ static unsigned int	ft_e(char const *s1, char const *set)
 {
 	unsigned int	temp_end;
 	unsigned int	index;
-	unsigned char	i;
+	int				i;
 
 	i = ft_strlen(s1) - 1;
 	temp_end = ft_strlen(s1) - 1;
