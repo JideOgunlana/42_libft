@@ -6,7 +6,7 @@
 /*   By: bogunlan <bogunlan@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 17:52:27 by bogunlan          #+#    #+#             */
-/*   Updated: 2022/04/29 12:29:48 by bogunlan         ###   ########.fr       */
+/*   Updated: 2022/05/04 15:04:56 by bogunlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 	
 	Prototype:				int isprint(int c);
 
-	Parameters				c − This is the character to be checked.
+	Parameters				c − This is the character   to be checked.
 
 	Return Value			This function returns a non-zero value(true) if c is a printable character else, zero (false).
  */

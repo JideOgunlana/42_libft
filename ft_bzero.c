@@ -6,12 +6,12 @@
 /*   By: bogunlan <bogunlan@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/09 17:44:57 by bogunlan          #+#    #+#             */
-/*   Updated: 2022/04/29 12:15:19 by bogunlan         ###   ########.fr       */
+/*   Updated: 2022/05/04 13:42:14 by bogunlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <stdio.h>
 /* 
 	Description:			The bzero() function fills the first n bytes of the object pointed to by dst with zero (NUL) bytes.
 
@@ -28,19 +28,19 @@ void	ft_bzero(void *s, size_t n)
 	size_t	i;
 
 	i = 0;
-	if (n != 0)
+	if (n != 0)					// checks if an existing size of byte to zero out exists
 	{
 		while (i < n)
 		{
-			*((char *) s + i) = 0;
+			*((char *) s + i) = 0;		// casts the object pointed to to a character (because it uses the least memory) data type and zeros it out (makes it empty)
 			++i;
 		}
 	}
 	return ;
 }
 
-/* int	main()
-{
+int	main()
+/* {
 	char	c[] = "Hello Man!";
 	int i = 0;
 	while(c[i] != '\0')
@@ -48,11 +48,9 @@ void	ft_bzero(void *s, size_t n)
 		printf("%c\n", c[i]);
 		++i;
 	}
+	printf("%s\n", c);
 	i = 0;
-	ft_bzero(c, 4);
-	while(c[i] != '\0')
-	{
-		printf("%c\n", c[i]);
-		++i;
-	}
+	ft_bzero(c, sizeof(c));
+	printf(":%s:\n", c);
+	printf("%lu", sizeof(c));
 } */

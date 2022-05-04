@@ -6,7 +6,7 @@
 /*   By: bogunlan <bogunlan@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 17:59:16 by bogunlan          #+#    #+#             */
-/*   Updated: 2022/05/04 04:20:09 by bogunlan         ###   ########.fr       */
+/*   Updated: 2022/05/04 14:15:14 by bogunlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*p;
 
-	if (size > __SIZE_MAX__ / count)
+	if (size > __SIZE_MAX__ / count)			// check to protect memory usage (memory leaks, segmentation fault ....), checks the size needed is not more than the available size to be shared 
 		return (NULL);
 	p = malloc (count * size);
 	if (!p)
