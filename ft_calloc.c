@@ -6,7 +6,7 @@
 /*   By: bogunlan <bogunlan@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 17:59:16 by bogunlan          #+#    #+#             */
-/*   Updated: 2022/04/29 12:18:19 by bogunlan         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:05:21 by bogunlan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*p;
 
-	if (size > SIZE_MAX / count)
+	if ((size > SIZE_MAX / count) && (count > 0))
 		return (NULL);
 	p = malloc (count * size);
 	if (!p)
