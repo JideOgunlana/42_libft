@@ -72,7 +72,7 @@ OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(MANDATORY_FILES)))
 BONUSOBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(BONUS_FILES)))
 
 
-.c.o: $(SRCS)
+.c.o:
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJS)
